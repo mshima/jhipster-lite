@@ -97,8 +97,8 @@ class SecurityConfiguration {
         .and()
       .httpBasic()
         .and()
-        .apply(new JWTConfigurer(authenticationTokenReader()))
-        .and()
+      .oauth2ResourceServer()
+        .jwt()
       .build();
     // @formatter:on
   }
