@@ -41,6 +41,7 @@ public final class AuthenticatedUser {
    *           if the user uses an unknown authentication scheme
    */
   public static Optional<Username> optionalUsername() {
+    // TODO is there a generic converter for principal?
     return authentication().map(AuthenticatedUser::readPrincipal).flatMap(Username::of);
   }
 
